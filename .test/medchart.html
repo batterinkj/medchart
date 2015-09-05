@@ -1,0 +1,73 @@
+<template name ="home">
+  <head>
+  <title>Medication Chart</title>
+</head>
+
+<body>
+  {{> header}}
+  {{> table}}
+
+</body>
+  
+</template>
+
+
+
+<template name="header">
+  {{> loginButtons}}
+  {{> chartSelect}}
+</template>
+
+<template name = "table">
+    <div id = "medChartContainer">
+    {{#with medChart}}
+      <form>
+        <input id = "hospitalNameEntry" value={{hospitalName}} type = "text" name = "hospitalName">
+        <input id = "patientNameEntry" value= {{patientName}} type = "text" name = "patientName">
+      </form>
+      
+      <table class = "medchart">
+      <thead>
+        {{#each columnNames}}
+          <th> {{name}} </th>
+        {{/each}}
+      </thead>
+          {{#each row}}
+            <tr>
+            {{#each column}}
+              <td>{{this}}</td>
+            {{/each}}
+            <td id = 'deleteRowButton'>Del</td>  
+            </tr>
+          {{/each}}
+      {{> entryRow}}
+      </table>
+    {{/with}}
+    </div>
+    <div id = "newChartButton">Create new chart</div>
+    
+</template>
+
+<template name = "entryRow">
+  <tr>
+    <td>
+     {{> inputAutocomplete settings=autoComplete class="chartField"}}
+    </td>
+  {{#each numNames}}
+    <td><input  class="chartField" value ="" type="text"/></td>
+  {{/each}}
+    <td id = "addRowButton">Add Row</td>
+  </tr>
+</template>
+
+<template name="userPill">
+    <span class="label">{{drugName}}</span>
+</template>
+
+<template name = "chartSelect">
+  {{> inputAutocomplete settings=autoComplete class="charts"}}
+</template>
+
+<template name="chartFound">
+    <span class="label">{{patientName}}</span>
+</template>

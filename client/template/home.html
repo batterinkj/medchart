@@ -1,0 +1,10 @@
+<template name ="home">
+
+  {{#if currentUser}}
+      {{> chartList}}
+    {{else}}
+    {{>newUser}}
+  {{/if}}
+
+  
+</template>

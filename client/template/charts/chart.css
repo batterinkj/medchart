@@ -1,0 +1,8 @@
+@media print{
+    .medchart th:last-child{
+        display:none;
+    }
+    .medchart td:last-child{
+        display:none;
+    }
+}

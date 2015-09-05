@@ -1,0 +1,35 @@
+<template name = "chart">
+    <div id = "medChartContainer">
+    {{#with medChart}}
+      <form>
+        {{#if showHospitalNameForm}}
+          <input id = "hospitalNameEntry" value={{hospitalName}} type = "text" name = "hospitalName">
+        {{else}}
+          <h2 id = "hospitalName">{{hospitalName}}</h2>
+        {{/if}}
+        {{#if showPatientNameForm}}
+          <input id = "patientNameEntry" value= {{patientName}} type = "text" name = "patientName">
+        {{else}}
+          <h2 id = "patientName">{{patientName}}</h2>
+        {{/if}}
+      </form>
+      
+      <table class = "table medchart">
+      <thead><tr>
+        <th class = 'col-sm-2'>Drug</th>
+        <th class = 'col-sm-2'>Dose</th>
+        <th class = 'col-sm-1'>Morning</th>
+        <th class = 'col-sm-1'>Noon</th>
+        <th class = 'col-sm-1'>Supper</th>
+        <th class = 'col-sm-1'>Bedtime</th>
+        <th class = 'col-sm-2'>Indication</th>
+        <th class = 'col-sm-2'>Options</th>
+      </tr></thead>
+          {{#each row}}
+            {{>chartRow}}
+          {{/each}}
+      </table>
+          <div id = "addRowButton"> Add new row</div>
+    {{/with}}
+    </div>
+</template>

@@ -1,0 +1,30 @@
+<template name = "chartRow">
+            {{#if entryRow}}
+                <tr class= "chartEntryRow">
+
+                      <td>{{> inputAutocomplete value = drugName id="drugNameInput" settings=autoComplete class="chartField"}}</td>
+                    <td><input  id="drugDoseInput" class="chartField" value ={{drugDose}} type="text"/></td>
+                    <td><input  id="dosetime1Input" class="chartField" value ={{dosetime1}} type="text"/></td>
+                    <td><input  id="dosetime2Input" class="chartField" value ={{dosetime2}} type="text"/></td>
+                    <td><input  id="dosetime3Input" class="chartField" value ={{dosetime3}} type="text"/></td>
+                    <td><input  id="dosetime4Input" class="chartField" value ={{dosetime4}} type="text"/></td>
+                    <td><input  id="indicationInput" class="chartField" value ={{indication}} type="text"/></td>
+                    <td id = "saveRowButton">Save Row</td>
+                </tr>
+            {{else}}
+            <tr class = "chartRow">
+                <td>{{drugName}}</td>
+                <td>{{drugDose}}</td>
+                <td>{{dosetime1}}</td>
+                <td>{{dosetime2}}</td>
+                <td>{{dosetime3}}</td>
+                <td>{{dosetime4}}</td>
+                <td>{{indication}}</td>
+                <td id = 'deleteRowButton'>Del</td>  
+              </tr>
+            {{/if}}
+  </template>
+  
+  <template name="userPill">
+    <span class="label">{{drug_name}}</span>
+</template>

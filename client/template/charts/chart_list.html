@@ -1,0 +1,12 @@
+<template name="chartList">
+    <div class = "container">
+    {{#each chartList}}
+          <div class="row">
+            <div class="col-xs-4"><h3>{{patientName}}</h3></div>
+            <div class="col-xs-4">{{hospitalName}}</div>
+            <div class="col-xs-2"><a href = "{{pathFor 'chartPage'}}" class="discuss btn btn-default">View/Edit</a></div>
+            <div class="col-xs-2"><span class = "btn btn-default" id="deleteChartButton">Delete</span></div>
+            </div>
+    {{/each}}
+    </div>
+</template>
